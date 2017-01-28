@@ -124,7 +124,7 @@ public class LinkedList {
 		l.printList();
 
 		l.remove();
-		l.remove();
+		//l.remove();
 		l.reverse();
 		l.printList();
 		l.reverseHalf();
