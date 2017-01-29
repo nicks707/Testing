@@ -23,17 +23,18 @@ public class Tree {
 	public void inorder(treeNode root){
 		if(root == null){
 			return;
-		}
+		}else{
 		inorder(root.getLeft());
-		System.out.println(root.getData()+" ");
+		System.out.print(root.getData()+" ");
 		inorder(root.getRight());
+		}
 	}
 	
 	public void preorder(treeNode root){
 		if(root == null){
 			return;
 		}
-		System.out.println(root.getData());
+		System.out.print(root.getData());
 		preorder(root.getLeft());
 		preorder(root.getRight());
 		
@@ -42,5 +43,27 @@ public class Tree {
 		if(root == null){
 			return;
 		}
+		
+		preorder(root.getLeft());
+		preorder(root.getRight());
+		System.out.print(root.getData());
 	}
+	
+	public static void main(String[] args){
+		Tree t = new Tree();
+		t.insert(5);
+		t.insert(3);
+		t.insert(7);
+		t.insert(4);
+		t.insert(8);
+		t.insert(2);
+		t.insert(6);
+		t.inorder(t.root);
+		System.out.println("");
+		t.preorder(t.root);
+		System.out.println("");
+		t.postorder(t.root);
+	}
+	
+	
 }
