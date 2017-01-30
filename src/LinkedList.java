@@ -67,18 +67,24 @@ public class LinkedList {
 			System.out.println(p.getdata());
 		}
 	}
-	
+
 	public void reverseHalf(){
+		
 		if(head == null){
 			System.out.println("List is empty");
 		}else{
 			Node first = head;
 			Node second = head;
 			Node pre = null;
-			while(second.getNext()!=null||second==null){
-				pre = first;
-				first =first.getNext();
+			while(second.getNext()!=null && second!=null){
+				
+				if(second.getNext().getNext()!=null){
+					pre = first;
+					first =first.getNext();
 				second=second.getNext().getNext();
+				}else{
+					break;
+				}
 			}
 			System.out.println(pre.getdata()+"--"+first.getdata());
 			
@@ -98,19 +104,16 @@ public class LinkedList {
 		}
 	}
 	
-	public void reverseHalfx(){
-		if(head == null){
-			System.out.println("list is empty");
-		}else{
-			int count = 0;
-			
-			while(head.getNext()!=null){
-				head = head.getNext();
-				count++;
-			}
-			
-			
-		}
+	public boolean checkPalindrome(){
+		boolean res = true;
+		
+		reverseHalf();
+		
+		Node fast = head;
+		Node slow = head;
+		
+		
+		return res;
 	}
 	
 	public static void main(String[] args){
